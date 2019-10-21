@@ -1,1 +1,72 @@
+import java.util.*;
+import java.util.Scanner;
+/**
+ * Write a description of class chapter7project3b here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class chapter7project3b
+{
+    // instance variables - replace the example below with your own
+    private int x;
+    Scanner keyboard = new Scanner(System.in);
+    String userInput = "";
+    char dateChar[]= {'f'}; 
+    
+    /**
+     * Constructor for objects of class chapter7project3b
+     */
+    public chapter7project3b()
+    {
+        // initialise instance variables
+        x = 0;
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public int stringToChar(int y)
+    {
+        // put your code here
+       dateChar = userInput.toCharArray();
+       return x + y;
+    }
+    public String dateValidation(String date)
+    {
+        // put your code here
+        if(dateChar[0] == '0')
+       {
+         
+        }
+       return date;
+    }
+    public String changeDate(String Date)
+    {
+        // put your code here
+      
+       char array[] = dateChar;
+       if(dateChar[0] == '0')
+       {
+         for(int count = 0; count <= dateChar.length-1; count++)
+       { 
+        dateChar[count] = array[count+1];
+       } 
+
+       }
+       System.out.print("The date is ");
+         for(int count = 0; count <= dateChar.length-1; count++)
+       { 
+        System.out.print(dateChar[count]);
+       } 
+       String date1 = new String(dateChar);
+       
+       return date1;
+    }
+}
+
+
 
