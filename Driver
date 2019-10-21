@@ -18,11 +18,15 @@ public class ch7project1d
         System.out.println("-------------------");
         String userInput = "0";
         String correctDate = "ddd";
+        char changeDateFormat[] = {'f'};
         Scanner keyboard = new Scanner(System.in);
         ch7project3b checker = new ch7project3b();
         System.out.print("Please enter a date(in mm/dd/yyyy format)");
         userInput = keyboard.nextLine();
+        changeDateFormat = checker.stringToChar(userInput);
         correctDate = checker.changeDate(userInput);
+        checker.changeDateAgain();
+        
         
     }
 }
