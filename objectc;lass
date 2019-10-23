@@ -9,18 +9,29 @@ import java.util.Scanner;
 
 public class ch7project3b
 {
+    private int x;
     Scanner keyboard = new Scanner(System.in);
     String userInput = "0";
     int[] daysInTheDay = {00, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     String[] monthsName = {"Invalid Month", "January", "February", "March",
                            "April", "May", "June", "July", "August",
                            "September", "October", "November", "December"};
-    public ch7project3b()
-    {
-        
-    }
+   /**
+     * Constructor for objects of class ch7project3b
+     */
+   public ch7project3b()
+   {
+        // initialise instance variables
+        x = 0;
+   }
     
-    public void title()
+   /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */ 
+   public void introDisplay()
     {
         System.out.println("Date Convertor");
         System.out.println("--------------");
@@ -35,11 +46,8 @@ public class ch7project3b
         }
         else
         {
-            while(x < 1 || x > 12)
-            {
-              System.out.print("Please input a valid date:");
-              userInput = keyboard.nextLine();
-            }
+           
+              System.out.print("Please input a valid date");
             
             System.exit(0);
         }
@@ -47,8 +55,8 @@ public class ch7project3b
     
     public void printTheDay(int dayArrayInput, int comparitive)
     {
-        int maxDays = daysInTheDay[dayArrayInput];
-        if(comparitive >= 1 && comparitive <= maxDays)
+        int maximumNumberDays = daysInTheDay[dayArrayInput];
+        if(comparitive >= 1 && comparitive <= maximumNumberDays)
         {
             System.out.print(" " + comparitive + ", ");
         }
@@ -59,7 +67,7 @@ public class ch7project3b
         }
     }
     
-    public void year(int yearFinale)
+    public void yearOutput(int yearFinale)
     {
         System.out.print(yearFinale);
     }
