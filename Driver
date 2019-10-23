@@ -1,30 +1,47 @@
-
-/**
- * Write a description of class ch7project1d here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-
-import java.util.*;
-
-public class ch7project1d
-
+public class ch7project3bd
 {
     public static void main(String[] args)
     {
-        //Java code goes here
-        System.out.println("Date Format Changer");
-        System.out.println("-------------------");
-        String userInput = "0";
-        String gotham = " ";
-        String monthNames[] = {"Invalid month", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        Int monthDays[] = {00,31,28,31,30,31,30,31,31,30,31,30,31};
-        Scanner keyboard = new Scanner(System.in);
         ch7project3b checker = new ch7project3b();
-        System.out.print("Please enter a date(in mm/dd/yyyy format)");
-        userInput = keyboard.nextLine();
-        userInput = checker.dateValidation(userInput);
-         checker.changeDateAgain(userInput);
+        Scanner in = new Scanner(System.in);
+        int length = 0;
+        int yearMin = 0;
+        int nMonth = 0;
+        int nDay = 0;
+        int nYear = 0;
+        String userDateInput= " ";
+        String sMonth= " ";
+        String sMonthNew= " ";
+        String sDay= " ";
+        String sDayNew= " ";
+        String sYear= " ";
+        String first= " ";
+        checker.title();
+        System.out.print("Please enter a date in mm/dd/yyyy ");
+        userDateInput = in.nextLine();
+        length = userDateInput.length();
+        yearMin = length - 4;
+        sMonth = userDateInput.substring(0, 2);
+        sMonth = sMonth.replace("/","");
+        first = sMonth.substring(0);
+        if(first.equals("0"))
+        {
+            sMonth = sMonth.substring(2);
+        }
+        nMonth = Integer.parseInt(sMonth);
+        sDay = userDateInput.substring(2,5);
+        sDay = sDay.replace("/","");
+        first = sDay.substring(0);
+        if(first.equals("0"))
+        {
+            sDay = sDay.substring(1);
+        }
+        nDay = Integer.parseInt(sDay);
+        sYear = userDateInput.substring(yearMin, length);
+        sYear = sYear.replace("/","");
+        nYear = Integer.parseInt(sYear);
+        checker.printTheMonth(nMonth);
+        checker.printTheDay(nMonth, nDay);
+        checker.year(nYear);
     }
 }
