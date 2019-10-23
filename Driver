@@ -3,7 +3,7 @@ public class ch7project3bd
     public static void main(String[] args)
     {
         ch7project3b checker = new ch7project3b();
-        Scanner in = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
         int length = 0;
         int yearMin = 0;
         int nMonth = 0;
@@ -18,7 +18,7 @@ public class ch7project3bd
         String first= " ";
         checker.title();
         System.out.print("Please enter a date in mm/dd/yyyy ");
-        userDateInput = in.nextLine();
+        userDateInput = keyboard.nextLine();
         length = userDateInput.length();
         yearMin = length - 4;
         sMonth = userDateInput.substring(0, 2);
