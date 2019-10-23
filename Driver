@@ -17,16 +17,14 @@ public class ch7project1d
         System.out.println("Date Format Changer");
         System.out.println("-------------------");
         String userInput = "0";
-        String correctDate = "ddd";
-        char changeDateFormat[] = {'f'};
+        String gotham = " ";
+        String monthNames[] = {"Invalid month", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        Int monthDays[] = {00,31,28,31,30,31,30,31,31,30,31,30,31};
         Scanner keyboard = new Scanner(System.in);
         ch7project3b checker = new ch7project3b();
         System.out.print("Please enter a date(in mm/dd/yyyy format)");
         userInput = keyboard.nextLine();
-        changeDateFormat = checker.stringToChar(userInput);
-        correctDate = checker.changeDate(userInput);
-        checker.changeDateAgain();
-        
-        
+        userInput = checker.dateValidation(userInput);
+         checker.changeDateAgain(userInput);
     }
 }
