@@ -1,124 +1,66 @@
-import java.util.*;
-import java.util.Scanner;
 /**
- * Write a description of class chapter7project3b here.
+ * Write a description of class ch7project3b here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class chapter7project3b
+import java.util.*;
+import java.util.Scanner;
+
+public class ch7project3b
 {
-    // instance variables - replace the example below with your own
-    private int x;
     Scanner keyboard = new Scanner(System.in);
-    char dateChar[]= {'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f'}; 
-    
-    
-    public chapter7project3b()
+    String userInput = "0";
+    int[] daysInTheDay = {00, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    String[] monthsName = {"Invalid Month", "January", "February", "March",
+                           "April", "May", "June", "July", "August",
+                           "September", "October", "November", "December"};
+    public ch7project3b()
     {
-        // initialise instance variables
-        x = 0;
-    }
-
- 
-    public String stringToChar(String date)
-    {
-    
-        // put your code here
-        for(int count = 0; count <= date.length()-1; count++)
-        {
-            //array[count]+= sum;
-            dateChar[count] = date.charAt(count);
-        }
-
-       return date;
-    }
-    public String dateValidation(String date)
-    {
-        // put your code here
-        if(date.charAt(0) == '1' || date.charAt(0) == '0')
-       {
-         return date;
-        } else
-        {
-        System.out.print("Please input a real date(in mm/dd/yyyy format)");
-        date = keyboard.nextLine();
-        while(date.charAt(0) != '1' || date.charAt(0) != '0')
-        {
-        System.out.print("Please input a real date(in mm/dd/yyyy format)");
-        date = keyboard.nextLine();
-        }
-        return date;
-       }
-      
-    }
-    public String dateValidation2(String date)
-    {
-        // put your code here
-        return date;
-      
-    }
-   
-    public void changeDateAgain(String date)
-        {
-        // put your code here
-        if(date.charAt(0) == '0')
-        {
-           if(date.charAt(1) == '1')
-            {
-            System.out.print("The date is january " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '2')
-            {
-            System.out.print("The date is Febuary " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '3')
-            {
-            System.out.print("The date is March " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '4')
-             {
-            System.out.print("The date is April " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '5')
-            {
-            System.out.print("The date is May " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '6')
-            {
-            System.out.print("The date is June " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '7')
-            {
-            System.out.print("The date is July " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '8')
-            {
-            System.out.print("The date is August " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '9')
-            {
-            System.out.print("The date is September " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }   
-        }
         
-        else if(date.charAt(0) == '1')
-        {
-            if(date.charAt(1) == '0')
-            {
-            System.out.print("The date is October " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            if(date.charAt(1) == '1')
-            {
-            System.out.print("The date is November " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
-            else if(date.charAt(1) == '2')
-            {
-            System.out.print("The date is December " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
-            }
+    }
+    
+    public void title()
+    {
+        System.out.println("Date Convertor");
+        System.out.println("--------------");
         
-      }   
-      }
+    }
+    
+    public void printTheMonth(int x)
+    {
+        if(x >= 1 && x <= 12)
+        {
+            System.out.print(monthsName[x]);
+        }
+        else
+        {
+            while(x < 1 || x > 12)
+            {
+              System.out.print("Please input a valid date:");
+              userInput = keyboard.nextLine();
+            }
+            
+            System.exit(0);
+        }
+    }
+    
+    public void printTheDay(int dayArrayInput, int comparitive)
+    {
+        int maxDays = daysInTheDay[dayArrayInput];
+        if(comparitive >= 1 && comparitive <= maxDays)
+        {
+            System.out.print(" " + comparitive + ", ");
+        }
+        else
+        {
+            System.out.println("\nPlease input a valid day");
+            System.exit(0);
+        }
+    }
+    
+    public void year(int yearFinale)
+    {
+        System.out.print(yearFinale);
+    }
 }
-
-
