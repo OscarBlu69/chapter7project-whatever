@@ -1,74 +1,51 @@
-/**
- * Write a description of class ch7project3b here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 import java.util.*;
 import java.util.Scanner;
 
-public class ch7project3b
+
+public class ch7project3bd
 {
-    private int x;
-    Scanner keyboard = new Scanner(System.in);
-    String userInput = "0";
-    int[] daysInTheDay = {00, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    String[] monthsName = {"Invalid Month", "January", "February", "March",
-                           "April", "May", "June", "July", "August",
-                           "September", "October", "November", "December"};
-   /**
-     * Constructor for objects of class ch7project3b
-     */
-   public ch7project3b()
-   {
-        // initialise instance variables
-        x = 0;
-   }
-    
-   /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */ 
-   public void introDisplay()
+    public static void main(String[] args)
     {
-        System.out.println("Date Convertor");
-        System.out.println("--------------");
-        
-    }
-    
-    public void printTheMonth(int x)
-    {
-        if(x >= 1 && x <= 12)
+        ch7project3b checker = new ch7project3b();
+        Scanner keyboard = new Scanner(System.in);
+        int length = 0;
+        int yearMin = 0;
+        int nMonth = 0;
+        int nDay = 0;
+        int nYear = 0;
+        String userDateInput= " ";
+        String sMonth= " ";
+        String sMonthNew= " ";
+        String sDay= " ";
+        String sDayNew= " ";
+        String sYear= " ";
+        String first= " ";
+        checker.introDisplay();
+        System.out.print("Please enter a date in mm/dd/yyyy ");
+        userDateInput = keyboard.nextLine();
+        length = userDateInput.length();
+        yearMin = length - 4;
+        sMonth = userDateInput.substring(0, 2);
+        sMonth = sMonth.replace("/","");
+        first = sMonth.substring(0);
+        if(first.equals("0"))
         {
-            System.out.print(monthsName[x]);
+            sMonth = sMonth.substring(2);
         }
-        else
+        nMonth = Integer.parseInt(sMonth);
+        sDay = userDateInput.substring(2,5);
+        sDay = sDay.replace("/","");
+        first = sDay.substring(0);
+        if(first.equals("0"))
         {
-           
-              System.out.print("Please input a valid date");
-            
-            System.exit(0);
+            sDay = sDay.substring(1);
         }
-    }
-    
-    public void printTheDay(int dayArrayInput, int comparitive)
-    {
-        int maximumNumberDays = daysInTheDay[dayArrayInput];
-        if(comparitive >= 1 && comparitive <= maximumNumberDays)
-        {
-            System.out.print(" " + comparitive + ", ");
-        }
-        else
-        {
-            System.out.println("\nPlease input a valid day");
-            System.exit(0);
-        }
-    }
-    
-    public void yearOutput(int yearFinale)
-    {
-        System.out.print(yearFinale);
+        nDay = Integer.parseInt(sDay);
+        sYear = userDateInput.substring(yearMin, length);
+        sYear = sYear.replace("/","");
+        nYear = Integer.parseInt(sYear);
+        checker.printTheMonth(nMonth);
+        checker.printTheDay(nMonth, nDay);
+        checker.yearOutput(nYear);
     }
 }
