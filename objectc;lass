@@ -11,116 +11,114 @@ public class chapter7project3b
     // instance variables - replace the example below with your own
     private int x;
     Scanner keyboard = new Scanner(System.in);
-    char dateChar[]= {'f'}; 
+    char dateChar[]= {'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f'}; 
     
-    /**
-     * Constructor for objects of class chapter7project3b
-     */
+    
     public chapter7project3b()
     {
         // initialise instance variables
         x = 0;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public String stringToChar(date)
+ 
+    public String stringToChar(String date)
     {
     
         // put your code here
-       dateChar = date.toCharArray();
-       return dateChar;
+        for(int count = 0; count <= date.length()-1; count++)
+        {
+            //array[count]+= sum;
+            dateChar[count] = date.charAt(count);
+        }
+
+       return date;
     }
     public String dateValidation(String date)
     {
         // put your code here
-        if(dateChar[0] == '0')
+        if(date.charAt(0) == '1' || date.charAt(0) == '0')
        {
-         
+         return date;
+        } else
+        {
+        System.out.print("Please input a real date(in mm/dd/yyyy format)");
+        date = keyboard.nextLine();
+        while(date.charAt(0) != '1' || date.charAt(0) != '0')
+        {
+        System.out.print("Please input a real date(in mm/dd/yyyy format)");
+        date = keyboard.nextLine();
         }
-       return date;
-    }
-    public String changeDate(String Date)
-    {
-        // put your code here
-      
-       char array[] = dateChar;
-       if(dateChar[0] == '0')
-       {
-         for(int count = 0; count <= dateChar.length-1; count++)
-       { 
-        dateChar[count] = array[count+1];
-       } 
-
+        return date;
        }
-       System.out.print("The date is ");
-         for(int count = 0; count <= dateChar.length-1; count++)
-       { 
-        System.out.print(dateChar[count]);
-       } 
-       String date1 = new String(dateChar);
-       
-       return date1;
+      
     }
-    public void changeDateAgain();
+    public String dateValidation2(String date)
     {
         // put your code here
-        if(dateChar[0] = '1')
+        return date;
+      
+    }
+   
+    public void changeDateAgain(String date)
         {
-           System.out.print("The date is January " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '2')
+        // put your code here
+        if(date.charAt(0) == '0')
         {
-        System.out.print("The date is Febuary " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '3')
-        {
-        System.out.print("The date is March " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '4')
-        {
-        System.out.print("The date is April " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '5')
-        {
-        System.out.print("The date is May " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '6')
-        {
-        System.out.print("The date is June " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '7')
-        {
-        System.out.print("The date is July " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '8')
-        {
-        System.out.print("The date is August " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[0] = '9')
-        {
-        System.out.print("The date is September " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[1] = '0')
-        {
-        System.out.print("The date is October " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[1] = '1')
-        {
-        System.out.print("The date is November " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
-        }
-        else if(dateChar[1] = '2')
-        {
-        System.out.print("The date is December " + dateChar[3] + dateChar[4] +", " dateChar[6] + dateChar[7] + dateChar[8] + dateChar[9]);
+           if(date.charAt(1) == '1')
+            {
+            System.out.print("The date is january " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '2')
+            {
+            System.out.print("The date is Febuary " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '3')
+            {
+            System.out.print("The date is March " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '4')
+             {
+            System.out.print("The date is April " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '5')
+            {
+            System.out.print("The date is May " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '6')
+            {
+            System.out.print("The date is June " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '7')
+            {
+            System.out.print("The date is July " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '8')
+            {
+            System.out.print("The date is August " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '9')
+            {
+            System.out.print("The date is September " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }   
         }
         
-       
-    }
+        else if(date.charAt(0) == '1')
+        {
+            if(date.charAt(1) == '0')
+            {
+            System.out.print("The date is October " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            if(date.charAt(1) == '1')
+            {
+            System.out.print("The date is November " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+            else if(date.charAt(1) == '2')
+            {
+            System.out.print("The date is December " + date.charAt(3) + date.charAt(4) +", " +date.charAt(6) + date.charAt(7) + date.charAt(8) + date.charAt(9));
+            }
+        
+      }   
+      }
 }
-
 
 
